@@ -1,0 +1,82 @@
+import java.util.Arrays;
+
+import java.util.List;
+
+import java.util.Map;
+
+import java.util.stream.Collectors;
+
+import javax.swing.JOptionPane;
+
+
+public class Main {
+
+
+  public static void main(String[] args) throws Exception {
+
+    List<Person> persons =
+
+        Arrays.asList(
+
+            new Person("Alice", 20),
+
+            new Person("Bob", 25),
+
+            new Person("Carol", 30),
+
+            new Person("Dave", 35));   
+
+    
+
+
+    Double averageAge = persons
+
+        .stream()
+
+        .collect(Collectors.averagingInt(p -> p.age));
+
+
+    Integer oldest = Collections.max(p.age);
+
+    Collections.sort(p.age);
+
+    Int youngest = p.age.get(0);
+
+    System.out.println(”Average age is: ” + averageAge);
+
+    System.out.println(”Oldest age is: ” + oldest);
+
+    System.out.println(”Youngest age is: ” + youngest);
+
+    JOptionPane.showInputDialog(Average age is: ” + averageAge + ”Oldest age is: ” + oldest + ”Youngest age is: ” + youngest);
+
+  }
+
+
+}
+
+class Person {
+
+  String name;
+
+  int age;
+
+
+  Person(String name, int age) {
+
+      this.name = name;
+
+      this.age = age;
+
+  }
+
+
+  @Override
+
+  public String toString() {
+
+      return name;
+
+  }
+
+}
